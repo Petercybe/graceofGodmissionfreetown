@@ -1,0 +1,722 @@
+ 
+        :root {
+            --primary: #4a6b82;
+            --secondary: #e3b04b;
+            --dark: #2d4059;
+            --light: #f5f5f5;
+            --accent: #a83737;
+            --text: #333333;
+            --text-light: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color:rgba(47, 118, 165, 0.56);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background-color: #8a2c2c;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e59c4080-48ca-42f0-9410-17af7d73382f.png') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* General Section Styling */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            padding:10px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Sermons Section */
+        .sermons {
+            background-color: linear-gradient(rgba(181, 227, 238, 0.5), rgba(121, 104, 196, 0.5));
+        }
+        
+        .sermon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .sermon-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .sermon-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .sermon-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .sermon-details {
+            padding: 20px;
+        }
+        
+        .sermon-details h3 {
+            margin-bottom: 10px;
+        }
+        
+        .sermon-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Events Section */
+        .events {
+            background-color: var(--light);
+        }
+        
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-date {
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .event-date .day {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .event-date .month {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .event-info {
+            padding: 20px;
+        }
+        
+        .event-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        .event-meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Ministries Section */
+        .ministry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .ministry-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 30px 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .ministry-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .ministry-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* Ministry Styles */
+        .ministry-content {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .min-content {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 50px; 
+            align-items: center;
+            padding: 0; 
+            width: 100%; 
+        }
+
+        .ministry-image {
+            width: 100%; 
+            order: 1; 
+        }
+
+        .ministry-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .ministry-text {
+            order: 2; 
+        }
+
+        /* New class to put image on the left */
+        .ministry-image-left .ministry-image {
+            order: -1; 
+        }
+
+        .ministry-tabs {
+            margin-bottom: 60px;
+        }
+        
+        .min-tab {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-color: var(--dark);
+            color: white;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--secondary);
+        }
+
+        .min-tab:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .min-tab.active-tab {
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-weight: 700;
+        }
+        
+        .min-content {
+            transition: all 0.3s ease;
+        }
+        
+        .hidden {
+            display: none;
+        }
+
+        /* Leadership Section Specific Styles */
+.leadership {
+    background-color: var(--dark); /* Using the dark variable from your main CSS */
+    color: white;
+}
+
+.leadership .section-title h2 {
+    color: white;
+}
+
+.leadership .section-title h2::after {
+    background-color: var(--secondary); /* Using the secondary variable */
+}
+
+/* General Overseer Section - Similar to About Section */
+.overseer-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for image and text */
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 60px; /* More space below overseer section */
+    background: linear-gradient(135deg, rgba(74, 107, 130, 0.2) 0%, rgba(45, 64, 89, 0.5) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 40px; /* Increased padding for the card */
+}
+
+.overseer-section .leader-image {
+    width: 100%; /* Ensure image takes full width of its grid column */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Square image with rounded corners */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for prominence */
+    border: none; /* Remove circular border */
+}
+
+.overseer-section .leader-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Remove extra space below image */
+}
+
+.overseer-section .leader-info h3 {
+    font-size: 2.5rem; /* Larger font for overseer name */
+    margin-bottom: 10px;
+    color: white;
+}
+
+.overseer-section .leader-position {
+    font-size: 1.2rem; /* Larger font for position */
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.overseer-section .leader-bio {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Pastoral Team Grid */
+.pastoral-team-grid { /* Renamed from pastors-grid for clarity */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.leader-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 30px 20px;
+    display: flex; /* Use flexbox for internal alignment */
+    flex-direction: column;
+    align-items: center;
+}
+
+.leader-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.leader-card .leader-image { /* Specific styling for images within leader-card */
+    width: 160px;
+    height: 190px;
+    border-radius: 20%; /* Circular image */
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 4px solid var(--secondary); /* Border color from theme */
+}
+
+.leader-card .leader-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leader-card .leader-info {
+    flex-grow: 1; /* Allows text content to take available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.leader-card .leader-info h4 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.5rem; /* Slightly larger for pastor names */
+}
+
+.leader-card .leader-position {
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 1rem;
+}
+
+.leader-card .leader-bio {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto; /* Pushes social links to the bottom of the card */
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--secondary);
+    color: var(--dark);
+}
+
+/* Responsive adjustments for leadership section */
+@media (max-width: 992px) {
+    .overseer-section {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+        padding: 30px; /* Adjust padding for smaller screens */
+    }
+    .overseer-section .leader-image {
+        order: -1; /* Image on top when stacked */
+        border-radius: 8px; /* Keep square for stacked layout */
+    }
+    .overseer-section .leader-info h3 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .pastoral-team-grid {
+        grid-template-columns: 1fr; /* Stack pastor cards on very small screens */
+    }
+}
+
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color:rgb(165, 182, 199);
+            border:20px solid #ccc;
+            border-radius:8px;
+            padding:20px;
+
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            color: rgba(241, 237, 237, 0.856);
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content,
+            .min-content { 
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image,
+            .ministry-image-left .ministry-image { 
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                transition: all 0.3s ease;
+                padding: 30px;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .sermon-grid, .blog-grid {
+                grid-template-columns: 1fr; 
+            }
+        }
+    
