@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace of God mission freetown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Link to the new leadership CSS file -->
+    <link rel="stylesheet" href="leadership.css"> 
+    <style>
+        :root {
+            --primary: #4a6b82;
+            --secondary: #e3b04b;
+            --dark: #2d4059;
+            --light: #f5f5f5;
+            --accent: #a83737;
+            --text: #333333;
+            --text-light: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color:rgba(47, 118, 165, 0.56);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background-color: #8a2c2c;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e59c4080-48ca-42f0-9410-17af7d73382f.png') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* General Section Styling */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            padding:10px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Sermons Section */
+        .sermons {
+            background-color: linear-gradient(rgba(181, 227, 238, 0.5), rgba(121, 104, 196, 0.5));
+        }
+        
+        .sermon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .sermon-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .sermon-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .sermon-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .sermon-details {
+            padding: 20px;
+        }
+        
+        .sermon-details h3 {
+            margin-bottom: 10px;
+        }
+        
+        .sermon-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Events Section */
+        .events {
+            background-color: var(--light);
+        }
+        
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-date {
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .event-date .day {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .event-date .month {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .event-info {
+            padding: 20px;
+        }
+        
+        .event-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        .event-meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Ministries Section */
+        .ministry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .ministry-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 30px 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .ministry-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .ministry-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* Ministry Styles */
+        .ministry-content {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .min-content {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 50px; 
+            align-items: center;
+            padding: 0; 
+            width: 100%; 
+        }
+
+        .ministry-image {
+            width: 100%; 
+            order: 1; 
+        }
+
+        .ministry-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .ministry-text {
+            order: 2; 
+        }
+
+        /* New class to put image on the left */
+        .ministry-image-left .ministry-image {
+            order: -1; 
+        }
+
+        .ministry-tabs {
+            margin-bottom: 60px;
+        }
+        
+        .min-tab {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-color: var(--dark);
+            color: white;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--secondary);
+        }
+
+        .min-tab:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .min-tab.active-tab {
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-weight: 700;
+        }
+        
+        .min-content {
+            transition: all 0.3s ease;
+        }
+        
+        .hidden {
+            display: none;
+        }
+
+        /* Leadership Section Specific Styles */
+.leadership {
+    background-color: var(--dark); /* Using the dark variable from your main CSS */
+    color: white;
+}
+
+.leadership .section-title h2 {
+    color: white;
+}
+
+.leadership .section-title h2::after {
+    background-color: var(--secondary); /* Using the secondary variable */
+}
+
+/* General Overseer Section - Similar to About Section */
+.overseer-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for image and text */
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 60px; /* More space below overseer section */
+    background: linear-gradient(135deg, rgba(74, 107, 130, 0.2) 0%, rgba(45, 64, 89, 0.5) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 40px; /* Increased padding for the card */
+}
+
+.overseer-section .leader-image {
+    width: 100%; /* Ensure image takes full width of its grid column */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Square image with rounded corners */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for prominence */
+    border: none; /* Remove circular border */
+}
+
+.overseer-section .leader-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Remove extra space below image */
+}
+
+.overseer-section .leader-info h3 {
+    font-size: 2.5rem; /* Larger font for overseer name */
+    margin-bottom: 10px;
+    color: white;
+}
+
+.overseer-section .leader-position {
+    font-size: 1.2rem; /* Larger font for position */
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.overseer-section .leader-bio {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Pastoral Team Grid */
+.pastoral-team-grid { /* Renamed from pastors-grid for clarity */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.leader-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 30px 20px;
+    display: flex; /* Use flexbox for internal alignment */
+    flex-direction: column;
+    align-items: center;
+}
+
+.leader-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.leader-card .leader-image { /* Specific styling for images within leader-card */
+    width: 160px;
+    height: 190px;
+    border-radius: 20%; /* Circular image */
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 4px solid var(--secondary); /* Border color from theme */
+}
+
+.leader-card .leader-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leader-card .leader-info {
+    flex-grow: 1; /* Allows text content to take available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.leader-card .leader-info h4 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.5rem; /* Slightly larger for pastor names */
+}
+
+.leader-card .leader-position {
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 1rem;
+}
+
+.leader-card .leader-bio {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto; /* Pushes social links to the bottom of the card */
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--secondary);
+    color: var(--dark);
+}
+
+/* Responsive adjustments for leadership section */
+@media (max-width: 992px) {
+    .overseer-section {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+        padding: 30px; /* Adjust padding for smaller screens */
+    }
+    .overseer-section .leader-image {
+        order: -1; /* Image on top when stacked */
+        border-radius: 8px; /* Keep square for stacked layout */
+    }
+    .overseer-section .leader-info h3 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .pastoral-team-grid {
+        grid-template-columns: 1fr; /* Stack pastor cards on very small screens */
+    }
+}
+
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color:rgb(165, 182, 199);
+            border:20px solid #ccc;
+            border-radius:8px;
+            padding:20px;
+
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            color: rgba(241, 237, 237, 0.856);
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content,
+            .min-content { 
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image,
+            .ministry-image-left .ministry-image { 
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                transition: all 0.3s ease;
+                padding: 30px;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .sermon-grid, .blog-grid {
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Grace of God <span>mission freetown</span></a>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#leadership">Leadership</a></li> <!-- Added Leadership link -->
+                    <li><a href="#ministries">Ministries</a></li>
+                    <li><a href="#sermons">Sermons</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#blog">Blog</a></li> <!-- Added Blog link -->
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to Grace of God mission freetown</h1>
+                <p>A place of worship, fellowship, and spiritual growth. Join us as we seek God's will and serve our community with love and compassion.</p>
+                <a href="#about" class="btn">Learn More</a>
+                <a href="#events" class="btn btn-accent">Join Our Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our Church</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 style="color: #070707;">Our Mission & Vision</h3>
+                    <p style="color: #f1efef;">Grace of God Mission Freetown is more than a church — it’s a spiritual family and a home of transformation. With passionate worship, powerful teaching of God’s Word, and an atmosphere soaked in prayer, the church nurtures believers to grow deeper in faith and purpose.</p>
+                    <p style="color: #f5f5f5;">From vibrant youth and children’s ministries to inspiring women’s and men’s fellowships, every heart finds a place to belong and serve. United by love and driven by a vision to impact lives, Grace of God Mission Freetown is raising a generation anchored in holiness, revival, and evangelism.</p>
+                    <p style="color: #f5f5f5;">Here, destinies are shaped, gifts are discovered, and Christ remains at the center of everything. Come and experience the grace that changes lives!</p>
+                    <a href="#" class="btn">Our Beliefs</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6ab0edaf-99bf-40c3-ae34-2ff6ba88dce3.png" alt="Grace Community Church building with modern architecture and stained glass windows" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="section leadership" id="leadership">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Leadership</h2>
+            </div>
+            
+            <!-- General Overseer -->
+            <div class="overseer-section">
+                <div class="leader-image">
+                    <img src="01.jpg" alt="Senior pastor in formal attire with welcoming smile standing in front of church building">
+                </div>
+                <div class="leader-info">
+                    <h3>Pst. Frank Anih</h3>
+                    <span class="leader-position">General Overseer</span>
+                    <p class="leader-bio">
+                        Pastor Frank Anih, fondly known as the Daddy of the House, is the respected General Overseer of Grace of God Mission Freetown. With unwavering dedication, he leads the ministry through passionate preaching, fervent prayer, and a vision anchored in the transformative power of God’s Word.
+                        As Daddy of the House, Pastor Frank is a spiritual father to many mentoring, encouraging, and nurturing believers to walk in faith, love, and holiness. Under his leadership, Grace of God Mission Freetown has become a vibrant community where lives are renewed, destinies are shaped, and Christ remains at the center of all things. His ministry continues to inspire hope, unity, and a deeper pursuit of God across Freetown and beyond.
+                    </p>
+                    <!-- Add social links if desired, using the social-links class -->
+                    <!-- <div class="social-links">
+                        <a href="#" aria-label="Email Pastor Frank">✉</a>
+                        <a href="#" aria-label="Follow Pastor Frank on Twitter">🐦</a>
+                    </div> -->
+                </div>
+            </div>
+             <!-- Pastoral Team -->
+            <h3 class="text-2xl font-semibold text-center mb-12">Pastoral Team</h3>
+            <div class="pastoral-team-grid">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="p1.jpg" alt="Pastor Prosper Damba">
+                    </div>
+                    <div class="leader-info">
+                        <h4>Pastor Prosper Damba</h4>
+                        <span class="leader-position">Youth & Young Adults Pastor</span>
+                        <p class="leader-bio">
+                            Pastor Prosper Damba is an anointed man of God and the passionate Young Adults Pastor at Grace of God Mission Freetown. Gifted with a dynamic teaching style and a heart for the next generation, he is devoted to empowering young people to discover their purpose, deepen their faith, and live boldly for Christ.
+                            Through relatable messages, mentorship, and fervent prayer, Pastor Prosper inspires young adults to grow spiritually, embrace holiness, and impact their world for God’s glory. His ministry continues to raise a vibrant, prayerful, and purpose-driven generation rooted firmly in the love and truth of Christ.
+                        </p>
+                        <!-- Add social links if desired -->
+                        <!-- <div class="social-links">
+                            <a href="#" aria-label="Email Pastor Prosper">✉</a>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="p3.jpg" alt="Pastor Sylvia">
+                    </div>
+                    <div class="leader-info">
+                        <h4>Pastor Sylvia</h4>
+                        <span class="leader-position">Associate Pastor</span>
+                         <p>Pastor Sylvia stands as a spiritual pillar and guiding light to the Women’s Department at Grace of God Mission Freetown. With a heart full of compassion and a deep passion for nurturing women in their faith journey, she leads with wisdom, grace, and unwavering commitment.
+
+Through her inspiring teachings, prayerful intercession, and dedicated mentorship, Pastor Sylvia empowers women to embrace their God-given identity, purpose, and calling. She fosters a warm and supportive environment where women can grow spiritually, build strong sisterhoods, and actively serve both the church and the community.
+
+Her leadership is marked by a balance of strength and gentleness, encouraging women to walk boldly in holiness, love, and service. Pastor Sylvia’s influence has strengthened the foundation of the women’s ministry, making it a vibrant and impactful force for God’s kingdom in Freetown and beyond.</p>
+                                                <!-- Add social links if desired -->
+                        <!-- <div class="social-links">
+                            <a href="#" aria-label="Email Pastor Sylvia">✉</a>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="p2.jpg" alt="Pastor Israel M. P. Kamara">
+                    </div>
+                    <div class="leader-info">
+                        <h4>Pastor Israel M. P. Kamara</h4>
+                        <span class="leader-position">Youth Pastor</span>
+                        <p class="leader-bio">
+                            Pastor Israel M. P. Kamara serves faithfully as the Youths Pastor at Grace of God Mission Freetown. With passion, vision, and a heart for the next generation, he mentors and empowers young people to grow in faith, character, and purpose.
+                            Through teaching, prayer, and creative programs, Pastor Israel inspires the youth to live boldly for Christ and become true ambassadors of the gospel in their schools, homes, and community. In addition, he doubles as the Head of the Choir, where he leads with dedication and helps cultivate powerful, spirit-filled worship. He is also filled with the anointing to write and compose gospel songs, enriching the ministry through his musical gift. His commitment continues to nurture a vibrant, united, and spiritually strong youth fellowship.
+                        </p>
+                        <!-- Add social links if desired -->
+                        <!-- <div class="social-links">
+                            <a href="#" aria-label="Email Pastor Israel">✉</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Ministries Section -->
+    <section class="section" id="ministries">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Ministries</h2>
+            </div>
+            
+            <!-- Ministry Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 ministry-tabs">
+                <button onclick="showMinistry('youth')" class="min-tab bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-blue-300 transition">Youth</button>
+                <button onclick="showMinistry('women')" class="min-tab bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-blue-300 transition">Women</button>
+                 <button onclick="showMinistry('men')" class="min-tab bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-blue-300 transition">Men</button>
+                <button onclick="showMinistry('youngAdults')" class="min-tab bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-blue-300 transition">Young Adults</button>
+                <button onclick="showMinistry('children')" class="min-tab bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-blue-300 transition">Children</button>
+                <button onclick="showMinistry('sanctuary')" class="min-tab bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-blue-300 transition">Sanctuary Unit</button>
+                <button onclick="showMinistry('choir')" class="min-tab bg-gray-200 text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-blue-300 transition">Choir</button>
+            </div>
+            
+            <!-- Ministry Content -->
+            <div id="ministry-content">
+                <!-- Youth Ministry (default shown) -->
+                <div id="youth" class="min-content ministry-image-left">
+                    <div class="ministry-image">
+                        <img src="youth.jpg" alt="Youth group at church">
+                    </div>
+                    <div class="ministry-text">
+                        <h3>Youth Ministry</h3>
+                        <p>The youth of Grace Community Church are a vibrant, passionate group dedicated to growing in faith and serving their community.</p>
+                        <p>Weekly gatherings include worship, Bible study, and fun activities designed for young people.</p>
+                        <h4 class="text-xl font-semibold mb-2">Activities:</h4>
+                            <ul class="list-disc pl-6 mb-6">
+                                <li>seminars</li>
+                                <li>conferences</li>
+                                <li>all night prayers</li>
+                                <li>prayer and fasting</li>
+                                <li>Field trips & evangelism
+                                    <p style="color: #4361ee;">The door is open for youths outside our church to join completely free of charge! Come, grow, and fellowship with us!
+</p>
+                            </ul>
+                        <a href="#" class="btn">Join Youth Group</a>
+                    </div>
+                </div>
+
+                 <!-- Women's Ministry (hidden by default) -->
+                <div id="women" class="min-content ministry-image-left">
+                    <div class="ministry-image">
+                            <img src="women.jpg" alt="Diverse group of women sitting in circle at Bible study with books and coffee cups" class="rounded-lg shadow-xl w-full">
+                        </div>
+                        <div class="ministry-text">
+                            <h3 class="text-2xl font-semibold mb-4">Women's Ministry</h3>
+                            <p>The women — fondly known as the Mothers in the House — are pillars of prayer, faith, and strength at Grace of God Mission Freetown. United by love for God and one another, they serve faithfully in the church and their families, nurturing both the young and old with wisdom, compassion, and grace.</p>
+                            <p>Through their dedication to prayer meetings, charity, and support of church programs, these virtuous women embody the heart of service and the spirit of unity. Their faith, resilience, and godly example continue to inspire the entire congregation, making them true mothers not just in name, but in deed and heart.</p>
+                            <h4 class="text-xl font-semibold mb-2">Activities:</h4>
+                            <ul class="list-disc pl-6 mb-6">
+                                <li>Weekly Bible studies</li>
+                                <li>Annual women's conference</li>
+                                <li>Mentorship program</li>
+                                <li>Sisterhood retreats</li>
+                                <li>Creative worship nights</li>
+                            </ul>
+                            <a href="#" class="btn">Join women Ministry</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Men's Ministry (hidden by default) -->
+                <div id="men" class="min-content ministry-image-left">
+                    <div class="ministry-image">
+                        <img src="men.jpg" alt="Youth group at church">
+                    </div>
+                    <div class="ministry-text">
+                        <h3>Men's Ministry</h3>
+                        <p>The Men of the House at Grace of God Mission Freetown are builders of vision and carriers of spiritual authority. Bound by faith and fellowship, they stand strong as protectors of the church and their families, committed to advancing God’s kingdom through action, prayer, and leadership.</p>
+                        <p>Weekly gatherings include worship, Bible study, and fun activities designed for young people.</p>
+                        <p>With hearts devoted to service and hands ready to work, they drive forward church projects, mentor the younger generation, and uphold unity within the body of Christ. Their dedication, courage, and steadfast faith make them a vital force, shaping the present and future of the ministry with purpose and resolve.</p>
+                        <h4 class="text-xl font-semibold mb-2">Activities:</h4>
+                            <ul class="list-disc pl-6 mb-6">
+                                <li>Monthly prayer breakfasts</li>
+                                <li>Quarterly conference with guest speakers</li>
+                                <li>Annual men's retreat</li>
+                                <li>Service projects in the community</li>
+                                <li>Small group accountability meetings</li>
+                            </ul>
+                        <a href="#" class="btn">Join Men's Ministry</a>
+                    </div>
+                </div>
+
+                <!-- youngAdults Ministry (hidden by default) -->
+                <div id="youngAdults" class="min-content ministry-image-left">
+                    <div class="ministry-image">
+                        <img src="young.jpg" alt="Youth group at church">
+                    </div>
+                    <div class="ministry-text">
+                        <h3>Young Adults</h3>
+                        <p>The young adults of Grace of God Mission Freetown are a dynamic, passionate, and purpose-driven generation. Standing at the crossroads of youth and maturity, they are deeply committed to growing in faith, discovering their God-given destinies, and impacting their world for Christ.</p>
+                        <p>Energetic and visionary, they serve boldly in music, evangelism, media, and mentorship — bringing fresh ideas and vibrant energy to every part of the ministry. United by love for God and each other, these young adults are not just the church of tomorrow, but active leaders and change-makers shaping the church today.</p>
+                        <h4 class="text-xl font-semibold mb-2">Activities:</h4>
+                            <ul class="list-disc pl-6 mb-6">
+                                <li>Weekly Bible studies</li>
+                                <li>Annual women's conference</li>
+                                <li>Mentorship program</li>
+                                <li>Sisterhood retreats</li>
+                                <li>Creative worship nights</li>
+                            </ul>
+                        <a href="#" class="btn">Join Young adult Ministry</a>
+                    </div>
+                </div>
+
+                  <!-- children Ministry (hidden by default) -->
+                <div id="children" class="min-content ministry-image-left">
+                    <div class="ministry-image">
+                        <img src="children.jpg" alt="Youth group at church">
+                    </div>
+                    <div class="ministry-text">
+                        <h3>children’s Ministry</h3>
+                        <p>The children of Grace of God Mission Freetown are cherished as the future of the church and a blessing to the body of Christ. Through dedicated teaching, worship, and interactive learning, they are nurtured in the love of God and grounded in His Word from an early age.</p>
+                        <p>Joyful, curious, and full of faith, these little ones are encouraged to grow in prayer, kindness, and obedience, reflecting Christ’s light in their homes, schools, and communities. Together, they form a lively and hopeful generation being raised to know, love, and serve the Lord wholeheartedly. At the heart of the children’s ministry is Sis Good News, a devoted and caring teacher whose love for God shines through her gentle guidance and joyful spirit. With patience, creativity, and a deep passion for nurturing young hearts.</p>
+                        <h4 class="text-xl font-semibold mb-2">Activities:</h4>
+                            <ul class="list-disc pl-6 mb-6">
+                                <li>Sunday School classes</li>
+                                <li>Vacation Bible School</li>
+                                <li>Children's choir</li>
+                                <li>Seasonal celebrations</li>
+                                <li>Parent-child discipleship events</li>
+                            </ul>
+                        <a href="#" class="btn">Register Your Child</a> <a href="#" class="btn">Volunteer With Us</a>
+                    </div>
+                </div>
+
+                  <!-- sanctuary Ministry (hidden by default) -->
+                <div id="sanctuary" class="min-content ministry-image-left">
+                    <div class="ministry-image">
+                        <img src="men.jpg" alt="Youth group at church">
+                    </div>
+                    <div class="ministry-text">
+                        <h3>sanctuary unit Ministry</h3>
+                        <p>The Sanctuary Unit at Grace of God Mission Freetown plays a vital role in maintaining the atmosphere of reverence and worship within the church. This dedicated team ensures that the Sanctuary remains a holy and welcoming space for all who come to seek God’s presence.</p>
+                        <p>Responsibilities of the Sanctuary Unit include preparing the worship environment, managing seating arrangements, assisting with orderly flow during services, and providing support to the worship and ministry teams. Their commitment helps create a smooth, peaceful, and inspiring worship experience, allowing the congregation to focus fully on God. 
+Are you organized and love serving others? The Sanctuary Unit at Grace of God Mission Freetown is welcoming new members! Help create a peaceful, welcoming worship environment. If interested, please contact the church office or any Sanctuary team member to get involved today!</p>
+                        <a href="#" class="btn">Join Men's Ministry</a>
+                    </div>
+                </div>
+
+                <!-- choir Ministry (hidden by default) -->
+                <div id="choir" class="min-content ministry-image-left">
+                    <div class="ministry-image">
+                        <img src="choir.jpg" alt="Youth group at church">
+                    </div>
+                    <div class="ministry-text">
+                        <h3>Choir and Instrumental Department Ministry</h3>
+                        <p>The Choir and Instrumental Department at Grace of God Mission Freetown leads the church in powerful, uplifting worship through song and music. With a heart to glorify God, this team blends voices and instruments to create an atmosphere where lives are touched and spirits are renewed.</p>
+                        <p>If you have a passion for singing or playing an instrument, we warmly invite you to join us! Whether you’re experienced or just starting, there’s a place for you to grow, serve, and be part of a joyful family dedicated to worshiping God with excellence and love.</p>
+                        <a href="#" class="btn">Join choir Ministry</a>
+                    </div>
+                </div>
+                
+                <!-- Other ministry content divs would go here -->
+                <!-- Each with similar structure but unique content -->
+                <!-- For brevity showing just the first one -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sermons Section -->
+    <section class="section sermons" id="sermons">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest Sermons</h2>
+            </div>
+            <div class="sermon-grid">
+                <div class="sermon-card">
+                    <div class="sermon-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/630000e7-67fa-488d-90b7-5f6f08826f20.png" alt="Pastor delivering sermon at Grace Community Church with congregation listening" />
+                    </div>
+                    <div class="sermon-details">
+                        <h3>Walking in Faith</h3>
+                        <div class="sermon-meta">
+                            <span>Pastor John Smith</span>
+                            <span>June 5, 2023</span>
+                        </div>
+                        <p>A powerful message about trusting God in difficult times and walking by faith when the path ahead isn't clear.</p>
+                        <a href="#" class="btn">Listen Now</a>
+                    </div>
+                </div>
+                <div class="sermon-card">
+                    <div class="sermon-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cd760c2e-c7d3-421a-8497-344851b33a26.png" alt="Bible study group gathered around tables with open Bibles in discussion" />
+                    </div>
+                    <div class="sermon-details">
+                        <h3>The Power of Prayer</h3>
+                        <div class="sermon-meta">
+                            <span>Pastor Sarah Johnson</span>
+                            <span>May 29, 2023</span>
+                        </div>
+                        <p>Exploring how prayer transforms our lives, strengthens our faith, and brings us closer to God's will for our lives.</p>
+                        <a href="#" class="btn">Listen Now</a>
+                    </div>
+                </div>
+                <div class="sermon-card">
+                    <div class="sermon-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0ad6a4c6-7f46-48c0-9356-47f68ed6634d.png" alt="Congregation raising hands in worship during a church service" />
+                    </div>
+                    <div class="sermon-details">
+                        <h3>Living a Life of Worship</h3>
+                        <div class="sermon-meta">
+                            <span>Rev. David Thompson</span>
+                            <span>May 22, 2023</span>
+                        </div>
+                        <p>Understanding that worship is more than just singing; it's a lifestyle of devotion and obedience to God.</p>
+                        <a href="#" class="btn">Listen Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section events" id="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Events</h2>
+            </div>
+            <div class="event-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">JUL</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Youth Summer Camp</h3>
+                        <div class="event-meta">
+                            <span>📍 Camp Hope Grounds</span>
+                            <span>⏰ 9:00 AM - 5:00 PM</span>
+                        </div>
+                        <p>An exciting week of faith, fun, and fellowship for our youth. Register now!</p>
+                        <a href="#" class="btn">Details</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">JUL</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Community Outreach Day</h3>
+                        <div class="event-meta">
+                            <span>📍 Downtown Park</span>
+                            <span>⏰ 10:00 AM - 2:00 PM</span>
+                        </div>
+                        <p>Join us as we serve our local community with acts of kindness and practical help.</p>
+                        <a href="#" class="btn">Volunteer</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">05</span>
+                        <span class="month">AUG</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Annual Church Picnic</h3>
+                        <div class="event-meta">
+                            <span>📍 Church Grounds</span>
+                            <span>⏰ 12:00 PM - 4:00 PM</span>
+                        </div>
+                        <p>A fun-filled day for the whole family with food, games, and fellowship.</p>
+                        <a href="#" class="btn">RSVP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+           
+    <!-- Blog Section -->
+    <section class="section blog" id="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Latest Blog Posts</h2>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-post-card">
+                    <div class="blog-post-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6079e29e-f331-40de-9f0e-6d59015956bf.png" alt="Person reading a Bible with a cup of coffee, symbolizing quiet time and reflection" />
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Finding Peace in a Chaotic World</h3>
+                        <div class="blog-post-meta">
+                            <span>By Admin</span>
+                            <span>July 10, 2023</span>
+                        </div>
+                        <p>In today's fast-paced world, finding moments of peace can be challenging. Discover biblical principles for inner calm.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-post-card">
+                    <div class="blog-post-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4605353d-e76f-49eb-8381-f8c80dd1d300.png" alt="Group of people holding hands in a circle, symbolizing community and fellowship" />
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>The Importance of Christian Community</h3>
+                        <div class="blog-post-meta">
+                            <span>By Pastor John Smith</span>
+                            <span>July 5, 2023</span>
+                        </div>
+                        <p>Why is fellowship crucial for spiritual growth? Explore how connecting with other believers strengthens your faith journey.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-post-card">
+                    <div class="blog-post-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6989990d-3bd7-402b-821a-ddadf4ac5a21.png" alt="Hands reaching out to help another hand, symbolizing service and outreach" />
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Serving Others: A Path to Deeper Faith</h3>
+                        <div class="blog-post-meta">
+                            <span>By Pastor Sarah Johnson</span>
+                            <span>June 28, 2023</span>
+                        </div>
+                        <p>Discover the transformative power of serving those around you, reflecting Christ's love in practical ways.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Grace of God mission Freetown</h3>
+                <p>Leading people into a growing relationship with Jesus Christ.</p>
+                <p>model new road </p>
+                <p> godmissionfreetowngraceof@gmail.com </p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#sermons">Sermons</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#ministries">Ministries</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Service Times</h3>
+                <p>Wednesday: Intercession – 5:00 PM
+                <p>Thursday: Deliverance Service – 6:00 PM</p>
+                <p>Friday: Bible Study – 6:00 PM</p>
+                <p> Saturday: Bible School – 10:00 AM</p>
+                <p>Sunday:</p>
+                                <li>Sunday School – 8:00 AM</li>
+                                <li>Service Commences – 9:00 AM</li>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <p>Follow us on social media for updates and inspiration.</p>
+                <!-- Placeholder for social media icons -->
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year"></span> Grace of God mission Freetown. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav').classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Show ministry content function
+        function showMinistry(ministry) {
+            // Hide all ministry content
+            document.querySelectorAll('.min-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Show selected ministry
+            document.getElementById(ministry).classList.remove('hidden');
+            
+            // Set active tab styling
+            document.querySelectorAll('.min-tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            
+            // Highlight active tab
+            // event.target might not be available if called directly, so we find the button
+            const clickedButton = document.querySelector(`.min-tab[onclick="showMinistry('${ministry}')"]`);
+            if (clickedButton) {
+                clickedButton.classList.add('active-tab');
+            }
+        }
+
+        // Show youth ministry by default
+        document.addEventListener('DOMContentLoaded', () => {
+            showMinistry('youth');
+            // Manually set the active class for the default tab
+            document.querySelector('.min-tab[onclick="showMinistry(\'youth\')"]').classList.add('active-tab');
+        });
+    </script>
+</body>
+</html>
