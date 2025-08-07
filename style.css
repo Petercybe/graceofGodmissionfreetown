@@ -123,7 +123,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e59c4080-48ca-42f0-9410-17af7d73382f.png') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e59c4080-48ca-42f0-9410-17af7d73382f.png') no-repeat center center/cover;
             color: white;
             display: flex;
             align-items: center;
@@ -517,29 +517,33 @@
     margin-bottom: 15px;
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: auto; /* Pushes social links to the bottom of the card */
+.social-icons {
+  text-align: center;
+  margin-top: 25px;
 }
 
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+.social-icons a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  line-height: 50px;
+  border-radius: 50%;
+ background-color:#ddd;
     color: white;
-    transition: all 0.3s ease;
+  font-size: 24px;
+  transition: background 0.3s, transform 0.3s;
+    text-align: center;
 }
 
-.social-links a:hover {
-    background-color: var(--secondary);
-    color: var(--dark);
+.social-icons a:hover {
+  color: #ff0050; /* TikTok pink or custom hover */
 }
+
+/* Optional: individual colors */
+.social-icons a[title="Facebook"]:hover { color: #3b5998; }
+.social-icons a[title="TikTok"]:hover { color: #010101; }
+.social-icons a[title="WhatsApp"]:hover { color: #25D366; }
 
 /* Responsive adjustments for leadership section */
 @media (max-width: 992px) {
@@ -563,41 +567,77 @@
 }
 
         
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color:rgb(165, 182, 199);
-            border:20px solid #ccc;
-            border-radius:8px;
-            padding:20px;
+      /* Contact Section */
+.contact-section {
+    padding: 80px 20px;
+    background-color: var(--light-bg);
+     border-radius: 30px;
+    box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+     
+}
 
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
+.contact-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 15px 15px 30px #bebebe,
+             
+}
+
+.contact-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    text-align: center;
+    color: var(--dark-bg);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--dark-bg);
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
         
         /* Footer */
         footer {
